@@ -32,5 +32,5 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: $GITHUB_ACTION_PATH/script.sh
+    - run: ${{ github.action_path }}/script.sh
       shell: bash
