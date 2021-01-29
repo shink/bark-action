@@ -12,10 +12,10 @@ fi
 
 host="https://api.day.app"
 request_url=$host/$INPUT_KEY/
-request_body="key=${INPUT_KEY}&body=${INPUT_BODY}&sound=${INPUT_SOUND}&isArchive=${INPUT_ISARCHIVE}&url=${INPUT_URL}&automaticallyCopy=${INPUT_AUTOMATICALLYCOPY}&copy=${INPUT_COPY}"
+request_body="title=${INPUT_TITLE}&body=${INPUT_BODY}&sound=${INPUT_SOUND}&isArchive=${INPUT_ISARCHIVE}&url=${INPUT_URL}&automaticallyCopy=${INPUT_AUTOMATICALLYCOPY}&copy=${INPUT_COPY}"
 
-echo -e "Request url: ${cyan}${request_url}${none}"
-echo -e "Request body:\n${cyan}${request_body//&/\n}${none}"
+echo -e "${cyan}Request url${none}: ${request_url}"
+echo -e "${cyan}Request body${none}:\n${request_body//&/\\n}"
 
-res=`curl -s -X POST -d ${request_body} ${request_url}`
-echo -e "Result: ${green}${res}${none}"
+res=`curl -s -X POST -d "${request_body}" ${request_url}`
+echo -e "${green}Result${none}: ${res}"
