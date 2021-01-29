@@ -32,5 +32,17 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: ${{ github.action_path }}/script.sh
+    - name: Echo inputs to environment variables
       shell: bash
+      run: |
+        echo "INPUT_KEY=${{ inputs.key }}" >> $GITHUB_ENV
+        echo "INPUT_TITLE=${{ inputs.title }}" >> $GITHUB_ENV
+        echo "INPUT_BODY=${{ inputs.body }}" >> $GITHUB_ENV
+        echo "INPUT_SOUND=${{ inputs.sound }}" >> $GITHUB_ENV
+        echo "INPUT_ISARCHIVE=${{ inputs.isArchive }}" >> $GITHUB_ENV
+        echo "INPUT_URL=${{ inputs.url }}" >> $GITHUB_ENV
+        echo "INPUT_AUTOMATICALLYCOPY=${{ inputs.automaticallyCopy }}" >> $GITHUB_ENV
+        echo "INPUT_COPY=${{ inputs.copy }}" >> $GITHUB_ENV
+    - name: Work
+      shell: bash
+      run: ${{ github.action_path }}/script.sh
