@@ -7,8 +7,6 @@
 
 An action for [Finb/Bark](https://github.com/Finb/Bark)
 
-[Chinese document | 中文文档](README_zh.md)
-
 ## Usage
 
 ```yml
@@ -34,15 +32,15 @@ jobs:
           copy: Content copied to clipboard
 ```
 
-> Among them, only the `key` parameter is required
+> 其中，只有 `key` 字段是必填的
 
-- `title`: Message title (a bit thicker than the content font size)
-- `body`: Message content
-- `sound`: [Push notification sound](https://github.com/Finb/Bark/tree/master/Sounds)
-- `isArchive`: Whether to save to the historical record (1 means save)
-- `url`: The address that will be redirected to the url (when sending, URL parameters need to be encoded)
-- `automaticallyCopy`: When this parameter is carried, the content will be automatically copied to the clipboard
-- `copy`: When carrying this parameter, only the value of this parameter will be copied
+- `title`: 标题（比内容字号粗一点）
+- `body`: 内容
+- `sound`: [推送铃声](https://github.com/Finb/Bark/tree/master/Sounds)
+- `isArchive`: 是否保存到历史记录（1 为保存，其他值为不保存）
+- `url`: 将跳转到url的地址（发送时，URL参数需要编码）
+- `automaticallyCopy`: 携带该参数时，将自动复制推送内容到剪贴板
+- `copy`: 携带该参数时，只复制该参数的值
 
 ## License
 

@@ -1,0 +1,36 @@
+name: 'Bark Action'
+description: 'An action for bark'
+author: Ji Yuanhao <jiyuanhao1997@gmail.com>
+branding:
+  icon: 'message-circle'
+  color: 'red'
+inputs:
+  key:
+    description: Secret key
+    required: true
+  title:
+    description: Message title
+    required: false
+  body:
+    description: Message body
+    required: false
+  sound:
+    description: Message sound
+    required: false
+  isArchive:
+    description: Whether to archive this message
+    required: false
+  url:
+    description: URL to redirect
+    required: false
+  automaticallyCopy:
+    description: Whether to copy this message automatically
+    required: false
+  copy:
+    description: Content copied to clipboard
+    required: false
+runs:
+  using: "composite"
+  steps:
+    - run: $GITHUB_ACTION_PATH/script.sh
+      shell: bash

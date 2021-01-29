@@ -1,0 +1,24 @@
+name: 'Push Notifications to Bark'
+
+on: 
+  repository_dispatch:
+  workflow_dispatch:
+
+jobs:
+  job:
+    name: Push notification job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Push notifications
+        uses: ./
+        with:
+          key: ${{ secrets.KEY }}
+          title: Message title
+          body: Message body
+          sound: alarm
+          isArchive: 1
+          url: https://yuanhaoji.com
+          automaticallyCopy: 1
+          copy: Content copied to clipboard
