@@ -2,8 +2,8 @@
 
 ![](https://img.shields.io/github/license/shink/bark-action.svg)
 ![](https://img.shields.io/badge/language-shell-89E051.svg)
-![](https://img.shields.io/github/stars/shink/bark-action.svg?style=flat-square&label=stars&logo=github)
-![](https://img.shields.io/github/forks/shink/bark-action.svg?style=flat-square&label=forks&logo=github)
+![](https://img.shields.io/github/stars/shink/bark-action.svg?label=stars&logo=github)
+![](https://img.shields.io/github/forks/shink/bark-action.svg?label=forks&logo=github)
 
 An action for [Finb/Bark](https://github.com/Finb/Bark)
 
@@ -37,8 +37,8 @@ jobs:
 - `title`: 标题（比内容字号粗一点）
 - `body`: 内容
 - `sound`: [推送铃声](https://github.com/Finb/Bark/tree/master/Sounds)
-- `isArchive`: 是否保存到历史记录（1 为保存，其他值为不保存）
-- `url`: 将跳转到url的地址（发送时，URL参数需要编码）
+- `isArchive`: 是否保存到历史记录（`1` 为保存，其他值为不保存）
+- `url`: 将跳转到 url 的地址（发送时，URL 参数需要编码）
 - `automaticallyCopy`: 携带该参数时，将自动复制推送内容到剪贴板
 - `copy`: 携带该参数时，只复制该参数的值
 
