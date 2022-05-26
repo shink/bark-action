@@ -23,7 +23,7 @@ request_body="title=${INPUT_TITLE}&body=${INPUT_BODY}&sound=${INPUT_SOUND}&isArc
 echo -e "${cyan}Request url${none}: ${request_url}"
 echo -e "${cyan}Request body${none}:\n${request_body//&/\\n}"
 
-http_code=$(curl -s -X POST -w "%{http_code}" -d "${request_body}" "${request_url}")
+http_code=$(curl -s -o /dev/null -w "%{http_code}" -X POST -d "${request_body}" "${request_url}")
 if [[ ! $http_code == 200 ]]; then
   echo -e "${red}Request error! The HTTP code is ${http_code}${none}" >&2
   exit 1
