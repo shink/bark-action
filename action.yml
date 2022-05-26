@@ -8,6 +8,9 @@ inputs:
   key:
     description: Secret key
     required: true
+  host:
+    description: Bark server hostname
+    required: false
   title:
     description: Message title
     required: false
@@ -37,6 +40,7 @@ runs:
       run: $GITHUB_ACTION_PATH/script.sh
       env:
         INPUT_KEY: ${{ inputs.key }}
+        INPUT_HOST: ${{ inputs.host }}
         INPUT_TITLE: ${{ inputs.title }}
         INPUT_BODY: ${{ inputs.body }}
         INPUT_SOUND: ${{ inputs.sound }}
