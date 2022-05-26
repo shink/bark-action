@@ -29,7 +29,8 @@ jobs:
       - name: Push notification
         uses: shink/bark-action@v1
         with:
-          key: ${{ secrets.KEY }}  # Your secret key
+          key: ${{ secrets.KEY }}       # Your secret key, it is required
+          host: ${{ secrets.HOST }}     # Your Bark host, the default is 'https://api.day.app'
           title: Message title
           body: Message body
           sound: alarm
@@ -41,6 +42,7 @@ jobs:
 
 > 其中，只有 `key` 字段是必填的。
 
+- `host`: 自行搭建的 Bark 服务的地址
 - `title`: 标题（比内容字号粗一点）
 - `body`: 内容
 - `sound`: [推送铃声](https://github.com/Finb/Bark/tree/master/Sounds)

@@ -10,7 +10,13 @@ if [[ -z $INPUT_KEY ]]; then
   exit 1
 fi
 
-host="https://api.day.app"
+if [[ -n $INPUT_HOST ]]; then
+  host="$INPUT_HOST"
+  echo -e "${cyan}Use custom Bark server hostname${none}: ${host}"
+else
+  host="https://api.day.app"
+fi
+
 request_url="${host}/${INPUT_KEY}/"
 request_body="title=${INPUT_TITLE}&body=${INPUT_BODY}&sound=${INPUT_SOUND}&isArchive=${INPUT_IS_ARCHIVE}&url=${INPUT_URL}&automaticallyCopy=${INPUT_AUTOMATICALLY_COPY}&copy=${INPUT_COPY}"
 
