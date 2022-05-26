@@ -1,30 +1,35 @@
 # Bark Action
 
-![](https://img.shields.io/github/license/shink/bark-action.svg)
-![](https://img.shields.io/badge/language-shell-89E051.svg)
-![](https://img.shields.io/github/stars/shink/bark-action.svg?label=stars&logo=github)
-![](https://img.shields.io/github/forks/shink/bark-action.svg?label=forks&logo=github)
+<p align="center">
+    <a href="LICENSE"><img src="https://img.shields.io/github/license/shink/bark-action.svg" /></a>
+    <img src="https://img.shields.io/badge/language-shell-89E051.svg" />
+    <img src="https://img.shields.io/github/stars/shink/bark-action.svg?label=stars&logo=github" />
+    <img src="https://img.shields.io/github/forks/shink/bark-action.svg?label=forks&logo=github" />
+</p>
 
-An action for [Finb/Bark](https://github.com/Finb/Bark)
+<p align="center">
+    <a href="README_zh.md"><b>中文文档</b></a> •
+    <a href="https://github.com/marketplace/actions/bark-action"><b>GitHub Marketplace</b></a>
+</p>
 
-[Chinese document | 中文文档](README_zh.md)
+A GitHub Action that pushes notifications via [Finb/Bark](https://github.com/Finb/Bark).
 
 ## Usage
 
 ```yml
-name: Bark Action
+name: 'Send Notifications via Bark'
 
-on: [push]
+on: [ push ]
 
 jobs:
-  job:
-    name: Push notification job
+  notify:
+    name: Notify
     runs-on: ubuntu-latest
     steps:
-      - name: Push notifications
+      - name: Push notification
         uses: shink/bark-action@v1
         with:
-          key: ${{ secrets.KEY }}   # Your secret key
+          key: ${{ secrets.KEY }}  # Your secret key
           title: Message title
           body: Message body
           sound: alarm
@@ -34,7 +39,7 @@ jobs:
           copy: Content copied to clipboard
 ```
 
-> Among them, only the `key` parameter is required
+> Among them, only the `key` field is required.
 
 - `title`: Message title (a bit thicker than the content font size)
 - `body`: Message content
@@ -43,6 +48,8 @@ jobs:
 - `url`: The address that will be redirected to the url (when sending, URL parameters need to be encoded)
 - `automaticallyCopy`: When this parameter is carried, the content will be automatically copied to the clipboard
 - `copy`: When carrying this parameter, only the value of this parameter will be copied
+
+For more information, please check out [Finb/Bark](https://github.com/Finb/Bark).
 
 ## License
 

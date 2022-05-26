@@ -1,28 +1,35 @@
 # Bark Action
 
-![](https://img.shields.io/github/license/shink/bark-action.svg)
-![](https://img.shields.io/badge/language-shell-89E051.svg)
-![](https://img.shields.io/github/stars/shink/bark-action.svg?label=stars&logo=github)
-![](https://img.shields.io/github/forks/shink/bark-action.svg?label=forks&logo=github)
+<p align="center">
+    <a href="LICENSE"><img src="https://img.shields.io/github/license/shink/bark-action.svg" /></a>
+    <img src="https://img.shields.io/badge/language-shell-89E051.svg" />
+    <img src="https://img.shields.io/github/stars/shink/bark-action.svg?label=stars&logo=github" />
+    <img src="https://img.shields.io/github/forks/shink/bark-action.svg?label=forks&logo=github" />
+</p>
 
-An action for [Finb/Bark](https://github.com/Finb/Bark)
+<p align="center">
+    <a href="README.md"><b>English Document</b></a> •
+    <a href="https://github.com/marketplace/actions/bark-action"><b>GitHub Marketplace</b></a>
+</p>
 
-## Usage
+一个通过 [Finb/Bark](https://github.com/Finb/Bark) 推送通知的 GitHub Action。
+
+## 使用
 
 ```yml
-name: Bark Action
+name: 'Push Notifications via Bark'
 
-on: [push]
+on: [ push ]
 
 jobs:
-  job:
-    name: Push notification job
+  notify:
+    name: Notify
     runs-on: ubuntu-latest
     steps:
-      - name: Push notifications
+      - name: Push notification
         uses: shink/bark-action@v1
         with:
-          key: ${{ secrets.KEY }}   # Your secret key
+          key: ${{ secrets.KEY }}  # Your secret key
           title: Message title
           body: Message body
           sound: alarm
@@ -32,7 +39,7 @@ jobs:
           copy: Content copied to clipboard
 ```
 
-> 其中，只有 `key` 字段是必填的
+> 其中，只有 `key` 字段是必填的。
 
 - `title`: 标题（比内容字号粗一点）
 - `body`: 内容
@@ -42,6 +49,8 @@ jobs:
 - `automaticallyCopy`: 携带该参数时，将自动复制推送内容到剪贴板
 - `copy`: 携带该参数时，只复制该参数的值
 
-## License
+更多详情请查看 [Finb/Bark](https://github.com/Finb/Bark)。
+
+## 许可证
 
 [MIT](LICENSE)
