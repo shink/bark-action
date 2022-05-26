@@ -16,7 +16,7 @@
 
 ## 使用
 
-```yml
+```yaml
 name: 'Push Notifications via Bark'
 
 on: [ push ]

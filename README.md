@@ -16,8 +16,8 @@ A GitHub Action that pushes notifications via [Finb/Bark](https://github.com/Fin
 
 ## Usage
 
-```yml
-name: 'Send Notifications via Bark'
+```yaml
+name: 'Push Notifications via Bark'
 
 on: [ push ]
 
