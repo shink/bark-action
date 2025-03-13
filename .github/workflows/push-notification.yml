@@ -14,17 +14,50 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      # This notification shall always be pushed.
       - name: Push notification
         uses: ./
         with:
           key: ${{ secrets.KEY }}
-          title: Message title
-          body: Message body
+          title: "Bark Action: expect push notification"
+          body: "This is a test message for push notification."
           sound: alarm
           isArchive: 1
-          url: https://yuanhaoji.com
+          url: ${{ secrets.URL }}
+          automaticallyCopy: 1
+          copy: Content copied to clipboard
+          onFailOnly: false
+          jobStatus: ${{ job.status }}
+
+      # This notification won't be pushed.
+      - name: Do not push notification
+        uses: ./
+        with:
+          key: ${{ secrets.KEY }}
+          title: "Bark Action: expect *NO* push notification"
+          body: "If you see this message, something is wrong."
+          sound: alarm
+          isArchive: 1
+          url: ${{ secrets.URL }}
           automaticallyCopy: 1
           copy: Content copied to clipboard
           onFailOnly: true
           jobStatus: ${{ job.status }}
 
+      - name: Force fail for testing
+        run: exit 1
+
+      # This notification shall always be pushed.
+      - name: Push a fail notification
+        uses: ./
+        with:
+          key: ${{ secrets.KEY }}
+          title: "Bark Action: expect push notification"
+          body: "This is a test message for push notification."
+          sound: alarm
+          isArchive: 1
+          url: ${{ secrets.URL }}
+          automaticallyCopy: 1
+          copy: Content copied to clipboard
+          onFailOnly: true
+          jobStatus: ${{ job.status }}
