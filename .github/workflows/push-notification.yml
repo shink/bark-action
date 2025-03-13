@@ -46,7 +46,6 @@ jobs:
 
       - name: Force fail for testing
         run: exit 1
-        continue-on-error: true
 
       # This notification shall always be pushed.
       - name: Push a fail notification
