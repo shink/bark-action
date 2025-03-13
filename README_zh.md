@@ -38,6 +38,8 @@ jobs:
           url: https://yuanhaoji.com
           automaticallyCopy: 1
           copy: Content copied to clipboard
+          onFailOnly: true
+          jobStatus: ${{ job.status }}
 ```
 
 > 其中，只有 `key` 字段是必填的。
@@ -50,6 +52,8 @@ jobs:
 - `url`: 将跳转到 url 的地址（发送时，URL 参数需要编码）
 - `automaticallyCopy`: 携带该参数时，将自动复制推送内容到剪贴板
 - `copy`: 携带该参数时，只复制该参数的值
+- `onFailOnly`: 是否仅在失败时发送消息
+- `jobStatus`: 作业的状态
 
 更多详情请查看 [Finb/Bark](https://github.com/Finb/Bark)。
 
