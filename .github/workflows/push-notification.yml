@@ -44,10 +44,6 @@ jobs:
           onFailOnly: true
           jobStatus: ${{ job.status }}
 
-      - name: Force fail for testing
-        run: exit 1
-        continue-on-error: true
-
       # This notification shall always be pushed.
       - name: Push a fail notification
         uses: ./
@@ -61,5 +57,4 @@ jobs:
           automaticallyCopy: 1
           copy: Content copied to clipboard
           onFailOnly: true
-          jobStatus: ${{ job.status }}
-        if: always() # Pick up events even if the job fails or is canceled.
+          jobStatus: failure
