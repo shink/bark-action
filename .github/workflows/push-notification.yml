@@ -54,7 +54,7 @@ jobs:
         with:
           key: ${{ secrets.KEY }}
           title: "Bark Action: expect push notification"
-          body: "This is a test message for push notification."
+          body: "This is a test message for push notification if job FAIL."
           sound: alarm
           isArchive: 1
           url: ${{ secrets.URL }}
@@ -62,3 +62,4 @@ jobs:
           copy: Content copied to clipboard
           onFailOnly: true
           jobStatus: ${{ job.status }}
+        if: always() # Pick up events even if the job fails or is canceled.
