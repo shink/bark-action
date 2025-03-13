@@ -32,6 +32,12 @@ inputs:
   copy:
     description: Content copied to clipboard
     required: false
+  onFailOnly:
+    description: Whether to send message only on fail
+    required: false
+  jobStatus:
+    description: Status of the job
+    required: false
 runs:
   using: "composite"
   steps:
@@ -48,3 +54,5 @@ runs:
         INPUT_URL: ${{ inputs.url }}
         INPUT_AUTOMATICALLY_COPY: ${{ inputs.automaticallyCopy }}
         INPUT_COPY: ${{ inputs.copy }}
+        INPUT_ON_FAIL_ONLY: ${{ inputs.onFailOnly }}
+        INPUT_JOB_STATUS: ${{ inputs.jobStatus }}

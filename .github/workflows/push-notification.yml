@@ -25,3 +25,6 @@ jobs:
           url: https://yuanhaoji.com
           automaticallyCopy: 1
           copy: Content copied to clipboard
+          onFailOnly: true
+          jobStatus: ${{ job.status }}
+

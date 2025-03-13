@@ -17,6 +17,17 @@ else
   host="https://api.day.app"
 fi
 
+if [[ $INPUT_ON_FAIL_ONLY == "true" ]]; then
+  if [[ -z $INPUT_JOB_STATUS ]]; then
+    echo -e "${red}ERROR: the jobStatus field is required when onFailOnly is true${none}" >&2
+    exit 1
+  fi
+  if [[ $INPUT_JOB_STATUS == "success" ]]; then
+    echo -e "${cyan}Job succeeded and onFailOnly is true, skipping notification${none}"
+    exit 0
+  fi
+fi
+
 request_url="${host}/${INPUT_KEY}/"
 request_body="title=${INPUT_TITLE}&body=${INPUT_BODY}&sound=${INPUT_SOUND}&isArchive=${INPUT_IS_ARCHIVE}&url=${INPUT_URL}&automaticallyCopy=${INPUT_AUTOMATICALLY_COPY}&copy=${INPUT_COPY}"
 
