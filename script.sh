@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -x
-
 red='\e[91m'
 green='\e[92m'
 cyan='\e[96m'
