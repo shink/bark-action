@@ -27,7 +27,7 @@ jobs:
           automaticallyCopy: 1
           copy: Content copied to clipboard
           onFailOnly: false
-          jobStatus: ${{ job.status }}
+          jobStatus: success # use `${{ job.status }}` in your CI
 
       # This notification won't be pushed.
       - name: Do not push notification
@@ -42,7 +42,7 @@ jobs:
           automaticallyCopy: 1
           copy: Content copied to clipboard
           onFailOnly: true
-          jobStatus: ${{ job.status }}
+          jobStatus: success # use `${{ job.status }}` in your CI
 
       # This notification shall always be pushed.
       - name: Push a fail notification
@@ -57,4 +57,4 @@ jobs:
           automaticallyCopy: 1
           copy: Content copied to clipboard
           onFailOnly: true
-          jobStatus: failure
+          jobStatus: failure # use `${{ job.status }}` in your CI
