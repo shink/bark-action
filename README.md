@@ -38,6 +38,8 @@ jobs:
           url: https://yuanhaoji.com
           automaticallyCopy: 1
           copy: Content copied to clipboard
+          onFailOnly: true
+          jobStatus: ${{ job.status }}
 ```
 
 > Among them, only the `key` field is required.
@@ -50,6 +52,8 @@ jobs:
 - `url`: The address that will be redirected to the url (when sending, URL parameters need to be encoded)
 - `automaticallyCopy`: When this parameter is carried, the content will be automatically copied to the clipboard
 - `copy`: When carrying this parameter, only the value of this parameter will be copied
+- `onFailOnly`: Whether to send the message only on fail
+- `jobStatus`: Status of the job
 
 For more information, please check out [Finb/Bark](https://github.com/Finb/Bark).
 
