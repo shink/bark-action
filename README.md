@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Push notification
-        uses: shink/bark-action@v2
+        uses: shink/bark-action@v3
         with:
           key: ${{ secrets.KEY }}       # Your secret key, it is required
           host: ${{ secrets.HOST }}     # Your Bark host, the default is 'https://api.day.app'
@@ -35,7 +35,7 @@ jobs:
           body: Message body
           sound: alarm
           isArchive: 1
-          url: https://yuanhaoji.com
+          url: example.com
           automaticallyCopy: 1
           copy: Content copied to clipboard
           onFailOnly: true

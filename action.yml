@@ -1,9 +1,9 @@
-name: 'Bark Action'
-description: 'An action for bark'
-author: 'Yuanhao Ji <jiyuanhao@apache.org>'
+name: "Bark Action"
+description: "An action for bark"
+author: "Yuanhao Ji <jiyuanhao@apache.org>"
 branding:
-  icon: 'message-circle'
-  color: 'red'
+  icon: "message-circle"
+  color: "red"
 inputs:
   key:
     description: Secret key
