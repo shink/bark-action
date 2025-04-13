@@ -1,15 +1,19 @@
-name: 'Push Notifications via Bark'
+name: "Push Notifications via Bark"
 
 on:
-  repository_dispatch:
   workflow_dispatch:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
 
 jobs:
   notify:
+    if: ${{ github.repository_owner == 'shink' }}
     name: Notify
     runs-on: ubuntu-latest
-
-    if: ${{ github.event.repository.owner.id == github.event.sender.id }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -23,7 +27,7 @@ jobs:
           body: "This is a test message for push notification."
           sound: alarm
           isArchive: 1
-          url: ${{ secrets.URL }}
+          url: example.com
           automaticallyCopy: 1
           copy: Content copied to clipboard
           onFailOnly: false
@@ -38,7 +42,7 @@ jobs:
           body: "If you see this message, something is wrong."
           sound: alarm
           isArchive: 1
-          url: ${{ secrets.URL }}
+          url: example.com
           automaticallyCopy: 1
           copy: Content copied to clipboard
           onFailOnly: true
@@ -53,7 +57,7 @@ jobs:
           body: "This is a test message for push notification if job FAIL."
           sound: alarm
           isArchive: 1
-          url: ${{ secrets.URL }}
+          url: example.com
           automaticallyCopy: 1
           copy: Content copied to clipboard
           onFailOnly: true
